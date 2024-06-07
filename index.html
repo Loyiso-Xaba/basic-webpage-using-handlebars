@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpage</title>
+  <!-- Import Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css"> <style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: blueviolet;
+    border: 1px solid violet;
+  }
+  
+  h1, h2, h3, h4 {
+    color: #2c3e50;
+  }
+  
+  section {
+    margin-bottom: 2em;
+  }
+  
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
+  }
+  .container {
+    border: 1px solid violet;
+    padding: 20px 15px 20px 15px;
+  }
+  .headerr {
+    background-image: url(./images/tablemountain.jpeg);
+  }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Header Section -->
+    <div class="row" id="headerr">
+      <div class="col s8">
+        <h1 id="main-title"></h1>
+      </div>
+      <div class="col s2">
+        <img id="main-image" class="responsive-img" alt="">
+      </div>
+    </div>
+
+    <!-- Sections Container -->
+    <div id="sections-container"></div>
+  </div>
+
+  <!-- Handlebars Templates -->
+  <script id="header-template" type="text/x-handlebars-template">
+    <h1>{{main}}</h1>
+    <img src="{{image}}" class="responsive-img" alt="Main Image">
+  </script>
+
+  <script id="section-template" type="text/x-handlebars-template">
+    <div class="section">
+      <h2>{{title}}</h2>
+      {{#each content}}
+        {{#if subtitle}}
+          <h3>{{subtitle}}</h3>
+          <div class="row">
+            {{#each subjects}}
+              <div class="col s4">
+                <h4>{{name}}</h4>
+                <img src="{{image}}" class="responsive-img" alt="{{name}}">
+              </div>
+            {{/each}}
+          </div>
+        {{else}}
+          <div class="row">
+            {{#if image}}
+              <div class="col s5">
+                <img src="{{image}}" class="responsive-img" alt="{{title}}">
+              </div>
+              <div class="col s7">
+                <p>{{description}}</p>
+              </div>
+            {{else}}
+              <p>{{description}}</p>
+            {{/if}}
+          </div>
+        {{/if}}
+      {{/each}}
+    </div>
+  </script>
+
+  <script id="table-template" type="text/x-handlebars-template">
+    <table class="striped">
+      <thead>
+        <tr>
+          {{#each headers}}
+            <th>{{this}}</th>
+          {{/each}}
+        </tr>
+      </thead>
+      <tbody>
+        {{#each rows}}
+          <tr>
+            {{#each this}}
+              <td>{{this}}</td>
+            {{/each}}
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </script>
+
+  <!-- Import jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Import Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Import Handlebars JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+  <script>
+    const data = {
+      "title": "Webpage",
+      "header": {
+        "main": "Loyiso Xaba",
+        "image": "/images/Webp.net-resizeimage (9).jpg"
+      },
+      "sections": [
+        {
+          "title": "Casablanca",
+          "content": [
+            {
+              "image": "./images/casablanca.jpg",
+              "description": "Casablanca, Morocco's largest city, is renowned for its rich heritage, blending modernity with traditional Moroccan culture. The city boasts iconic sights such as the majestic Hassan II Mosque, one of the world's largest mosques, and the historic medina, offering a glimpse into its vibrant past. Tourists are drawn to its beautiful coastline, bustling markets, and the Art Deco architecture in the city center. Casablanca's achievements include its status as a major economic hub in Africa, known for its thriving port and dynamic business environment."
+            }
+          ]
+        },
+        {
+          "title": "Russian",
+          "content": [
+            {
+              "description": "Russian is the most widely spoken of the Slavic languages and also the most intense and strong language in my opinion. It uses the Cyrillic alphabet and is known for its complex grammar, including a case system and verb aspects. Russian has significant global influence and cultural impact, as my awareness of it came from movies, especially ones about the Russian mob and its Oligarchs. Additionally, Russian literature, with renowned authors like Tolstoy and Dostoevsky, has made substantial contributions to world culture."
+            }
+          ]
+        },
+        {
+          "title": "Translations",
+          "content": [
+            {
+              "table": {
+                "headers": ["English", "Russian"],
+                "rows": [
+                  ["Hello", "Privet"],
+                  ["How are you?", "Cack vashi della?"],
+                  ["I love you", "Ya tebya lublu"],
+                  ["Goodnight", "spokoynoy nochi"]
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "BSc Physiology and Psychology - University Of Johannesburg",
+          "content": [
+            {
+              "subtitle": "Favourite Subjects",
+              "subjects": [
+                {
+                  "name": "Microbiology",
+                  "image": "/images/Webp.net-resizeimage (4).jpg"
+                },
+                {
+                  "name": "Calculus",
+                  "image": "/images/Webp.net-resizeimage (5).jpg"
+                },
+                {
+                  "name": "Psychopathology",
+                  "image": "/images/Webp.net-resizeimage (6).jpg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Historical Places",
+          "content": [
+            {
+              "place": "Johannesburg Fort",
+              "description": "The Johannesburg Fort served as a British military fort and later a prison that housed anti-apartheid activists, including Nelson Mandela. Today, it is a significant historic site symbolizing South Africa's journey from apartheid oppression to democracy and justice.",
+              "image": "/images/OIP.jpg"
+            },
+            {
+              "place": "Vilakazi Street",
+              "description": "Vilakazi Street, located in Soweto, is historically significant as the only street in the world to have housed two Nobel Peace Prize laureates, Nelson Mandela and Desmond Tutu.",
+              "image": "/images/vilakazi.jpg"
+            },
+            {
+              "place": "Sophiatown",
+              "description": "Sophiatown, a historic suburb in Johannesburg, was once a vibrant cultural hub and a center of black urban life during the early to mid-20th century, known for its rich musical heritage and political activism.",
+              "image": "/images/sophiatown.jpg"
+            }
+          ]
+        }
+      ]
+    };
+
+    // Compile and render the header template
+    const headerTemplateSource = document.getElementById('header-template').innerHTML;
+    const headerTemplate = Handlebars.compile(headerTemplateSource);
+    document.getElementById('main-title').innerHTML = data.header.main;
+    document.getElementById('main-image').src = data.header.image;
+
+    // Compile and render the section template
+    const sectionTemplateSource = document.getElementById('section-template').innerHTML;
+    const sectionTemplate = Handlebars.compile(sectionTemplateSource);
+
+    const sectionsContainer = document.getElementById('sections-container');
+    data.sections.forEach(section => {
+      if (section.title === "Translations") {
+        // Handle the table separately
+        const tableTemplateSource = document.getElementById('table-template').innerHTML;
+        const tableTemplate = Handlebars.compile(tableTemplateSource);
+        const tableHTML = tableTemplate(section.content[0].table);
+        sectionsContainer.innerHTML += `<div class="section"><h2>${section.title}</h2>${tableHTML}</div>`;
+      } else {
+        const sectionHTML = sectionTemplate(section);
+        sectionsContainer.innerHTML += sectionHTML;
+      }
+    });
+  </script>
+</body>
+
+</html>

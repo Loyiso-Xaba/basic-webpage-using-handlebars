@@ -1,0 +1,84 @@
+{
+  "title": "Webpage",
+  "header": {
+    "main": "Loyiso Xaba",
+    "image": "/images/Webp.net-resizeimage (9).jpg"
+  },
+  "sections": [
+    {
+      "title": "Casablanca",
+      "content": [
+        {
+          "image": "./images/casablanca.jpg",
+          "description": "Casablanca, Morocco's largest city, is renowned for its rich heritage, blending modernity with traditional Moroccan culture. The city boasts iconic sights such as the majestic Hassan II Mosque, one of the world's largest mosques, and the historic medina, offering a glimpse into its vibrant past. Tourists are drawn to its beautiful coastline, bustling markets, and the Art Deco architecture in the city center. Casablanca's achievements include its status as a major economic hub in Africa, known for its thriving port and dynamic business environment."
+        }
+      ]
+    },
+    {
+      "title": "Russian",
+      "content": [
+        {
+          "description": "Russian is the most widely spoken of the Slavic languages and also the most intense and strong language in my opinion. It uses the Cyrillic alphabet and is known for its complex grammar, including a case system and verb aspects. Russian has significant global influence and cultural impact, as my awareness of it came from movies, especially ones about the Russian mob and its Oligarchs. Additionally, Russian literature, with renowned authors like Tolstoy and Dostoevsky, has made substantial contributions to world culture."
+        }
+      ]
+    },
+    {
+      "title": "Translations",
+      "content": [
+        {
+          "table": {
+            "headers": ["English", "Russian"],
+            "rows": [
+              ["Hello", "Privet"],
+              ["How are you?", "Cack vashi della?"],
+              ["I love you", "Ya tebya lublu"],
+              ["Goodnight", "spokoynoy nochi"]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "BSc Physiology and Psychology - University Of Johannesburg",
+      "content": [
+        {
+          "subtitle": "Favourite Subjects",
+          "subjects": [
+            {
+              "name": "Microbiology",
+              "image": "/images/Webp.net-resizeimage (4).jpg"
+            },
+            {
+              "name": "Calculus",
+              "image": "/images/Webp.net-resizeimage (5).jpg"
+            },
+            {
+              "name": "Psychopathology",
+              "image": "/images/Webp.net-resizeimage (6).jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Historical Places",
+      "content": [
+        {
+          "place": "Johannesburg Fort",
+          "description": "The Johannesburg Fort served as a British military fort and later a prison that housed anti-apartheid activists, including Nelson Mandela. Today, it is a significant historic site symbolizing South Africa's journey from apartheid oppression to democracy and justice.",
+          "image": "/images/OIP.jpg"
+        },
+        {
+          "place": "Vilakazi Street",
+          "description": "Vilakazi Street, located in Soweto, is historically significant as the only street in the world to have housed two Nobel Peace Prize laureates, Nelson Mandela and Desmond Tutu.",
+          "image": "/images/vilakazi.jpg"
+        },
+        {
+          "place": "Sophiatown",
+          "description": "Sophiatown, a historic suburb in Johannesburg, was once a vibrant cultural hub and a center of black urban life during the early to mid-20th century, known for its rich musical heritage and political activism.",
+          "image": "/images/sophiatown.jpg"
+        }
+      ]
+    }
+  ]
+}

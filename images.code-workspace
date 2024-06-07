@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "images",
+			"path": "../basic_website/images"
+		},
+		{
+			"name": "materialize_webpage",
+			"path": "."
+		}
+	],
+	"settings": {}
+}

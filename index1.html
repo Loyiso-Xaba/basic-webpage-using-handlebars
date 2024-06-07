@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <title>Webpage</title>
+</head>
+<body>
+    
+        <div class="container pink-bg">
+            <div class="row">
+                <div class="col s8">
+                    <h1>{{user.name}}</h1>
+                </div>
+                <div class="col s2 l4">
+                    <img class="pink-bg-img" src="{{user.image}}">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s8">
+                    <h3 class="pink-text">{{fav_language.name}}</h3>
+                    <img class="pink-bg-img" src="{{city.Seoul.image}}">
+                </div>
+                <div class=" big-screen s6 seoul-description">
+                    <p>{{city.Seoul.description}}</p>
+                </div>
+            </div>
+
+            <div class="row pink-border">
+                <div class="col s12">
+                    <h3 class="pink-text">{{fav_language.title}}</h3>
+                    <p>{{fav_language.description}}/p>
+                    <table class="striped">
+                        <thead>
+                            <tr>
+                                <th>fav_language.eng</th>
+                                <th>fav_language.ko</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each fav_language.phrases}}
+                            <tr>
+                                <td>{{this.English}}</td>
+                                <td>{{this.Korean}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row pink-border">
+                <h3 class="pink-text">BA in International Relations - University Of Venda</h3>
+                <h3 class="pink-text">Favorite Subjects</h3>
+                {{#each education.favorite_subjects}}
+                <div class="col s4">
+                    <h4>{{this.name}}</h4>
+                    <img class="pink-bg-img" src="{{this.image}}">
+                </div>
+                {{/each}}
+            </div>
+
+            <div class="row pink-border historical-places">
+                <h3 class="pink-text">Historical Places</h3>
+                {{#each historical_places}}
+                <div class="col s4">
+                    <h4>{{this.name}}</h4>
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <p>{{this.description}}</p>
+                        </div>
+                        <div class="col s12 m6">
+                            <img class="pink-bg-img" src="{{this.image}}">
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+</body>
+</html>
